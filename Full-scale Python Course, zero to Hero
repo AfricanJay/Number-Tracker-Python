@@ -1,0 +1,23 @@
+#first code
+
+testing = 'Hello World!'
+print(testing)
+
+#Next, assignment operator
+
+line1 = "You're the absolute worst"
+
+line2 = ('')  #this adds a line break
+
+line3 = ("I wish you'd leave me forever")
+
+line4 = ("Bye for life!")
+
+print(line1)
+print(line2)
+print(line3)
+print(line2)
+print(line4)
+
+#Arithmetic and boolean
+
