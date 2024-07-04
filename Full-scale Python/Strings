@@ -1,0 +1,43 @@
+Read up Numbers.ipynb, variable assignment.ipynb
+
+#Eight major data types in Python:
+
+int (for integer)
+float
+str (for string)
+list
+tuple 
+dict (for dictionary)
+set
+bool (for Boolean True/False)'
+
+h
+
+-------STRING-------------
+#text characters, can also have numbers as strings if they are enclosed in quotations. works with either signle or double
+
+#if you are going to have a single quote in the string, encase the entire string in doubles and vice versa."
+
+Example:
+print('I'm using single quotes, but this will create an error')
+
+#the above will throw and error, but encase in doubles and it works.
+
+#escape character to print a new line:
+
+print('Use \n to print a new line')  #forward slash n
+
+[output]
+use
+to print a new line
+
+#Multi-line strings:
+
+a = """Lorem ipsum dolor sit amet,
+consectetur adipiscing elit,
+sed do eiusmod tempor incididunt
+ut labore et dolore magna aliqua."""
+
+print(a)
+
+
