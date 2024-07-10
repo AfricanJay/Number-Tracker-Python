@@ -40,4 +40,301 @@ ut labore et dolore magna aliqua."""
 
 print(a)
 
+len('Hello World')
+#shows th length of characters in the string, excluding the quotes:
+OUTPUT: 11
 
+---------------STRING INDEXING----------------------------
+
+
+j = "where are you going?"
+
+len(j)
+#To display the length
+
+print(len(j))
+
+OUTPUT: 20
+
+print(j[1])
+
+OUTPUT: h
+
+#starts counting from 0 in the front
+
+print(j[-1])
+OUTPUT: ?
+#negative starts counting from the last letter as -1
+
+print(j[1:])
+
+OUTPUT: here are you going?
+#picks everything from position 1 down to the end.
+
+print(j[14:])
+
+OUTPUT: going?
+#picks everything from position 14
+
+print(j[:14])  #notice the change in colon position
+
+OUTPUT: where are you
+#picks everything before position 14
+
+print(j[:])
+
+OUTPUT: where are you going?
+#picks everything
+
+print(j[:-3])
+OUtPUT: where are you goi
+
+#picks everything before position negative 3.
+
+print(j[-17:])
+OUTPUT:re are you going?
+
+#picks everything from negative 17 down to the end.
+
+print(j[::1])   #notice the double coloN
+
+OUTPUT: where are you going?
+#PRINTS in steps of 1, which is everything
+
+print(j[::2])
+
+OUTPUT: weeaeyugig
+#prints in steps of 2, inclduing the spaces
+
+print(j[::-1])
+
+OUTPUT: ?gniog uoy era erehw
+
+#STARTS from behind to print in steps of 1
+
+print(j[::-3])
+
+output: ?i yreh
+#starts from behind to print in steps of 3
+
+------strings splitting---------
+
+print(j[2:7])
+
+OUTPUT: ere a
+#picks everything from positions two to five
+
+print(j[-16:-4])
+
+OUTPUT:e are you go
+#picks everything from positions -16 to -4
+
+
+
+-------------------concatenation----------------------------
+
+j = "Jennifer"
+
+age = 24
+
+print(j + "is" + age)
+
+OUTPUT: syntax error. can only concatenate strings.
+
+#fix by converting the interger to a string
+
+print(j + " is " + str(age))
+
+Output: Jennifer is 24
+
+print(j + " has always been " + str(age) + " and also a very good woman.")
+
+Output: Jennifer has always been 24 and also a very good woman.
+
+age = 'f'
+
+print(age*20)
+
+output: ffffffffffffffffffff
+
+---------------------------------------USING IF STATEMENT WITH STRINGS--------------------------------
+
+
+
+content = "The best things in life are free!"
+if "wow" in content:
+  print("Yes, 'wow' is present.")
+else:
+   print('sorry')
+
+#this can be used for simple password checks if you use an input collector
+
+output: sorry
+
+if "best" in content:
+  print("Yes, 'best' is present.")
+else:
+   print('sorry')
+
+output: "Yes, 'best' is present.
+
+#Note: indentation levels matters when using if-else.
+
+
+------------------STRING METHODS-----------------------------------
+
+
+#capitalize()	Converts the first character to upper case
+
+final_text = "best in python is a girl"
+
+print(final_text.capitalize())
+
+output: Best in python is a girl
+
+---------
+
+#casefold()	Converts string into lower case, every capital letter is put back to small
+
+final_text = "best in Python is A girl"
+
+print(final_text.casefold())
+
+output: best in python is a girl
+
+---------
+
+#center()	Returns a centered string, pushes the string by the number of spaces specified
+
+final_text = "best in Python is A girl"
+
+print(final_text.center(50))
+
+output:            best in Python is A girl 
+
+------------
+
+count()	Returns the number of times a specified value occurs in a string
+
+final_text = "best in Python is A girl"
+
+print(final_text.count("i"))
+
+output: 3
+
+------------
+
+#encode()	Returns an encoded version of the string
+
+final_text = "best in Python is A girl"
+
+print(final_text.encode())
+
+output: b'best in Python is Ae girl'  #research more on this
+
+------------------
+
+
+#endswith()	Returns true if the string ends with the specified value
+
+final_text = "best in Python is A girl"
+
+print(final_text.endswith("l"))
+
+output: True
+
+final_text = "best in Python is A girl"
+
+print(final_text.endswith("r"))
+
+output: false
+
+-----------
+
+#expandtabs()	Sets the tab size of the string, \t is the escape character for tabs in the text, and by default, it creates a full, wide-sapce tab. 
+
+final_text = "best\tin\tPython\tis\tA\tgirl"
+
+print(final_text.expandtabs())
+
+output: best    in      Python  is      A       girl
+
+#but specifying a number can reduce it
+
+final_text = "best\tin\tPython\tis\tA\tgirl"
+
+print(final_text.expandtabs(2))
+
+output: best  in  Python  is  A girl
+
+final_text = "best\tin\tPython\tis\tA\tgirl"
+
+print(final_text.expandtabs(0))
+output: bestinPythonisAgirl
+
+---------
+
+#find()	Searches the string for a specified value and returns the position of where it was found, or where it starts from
+
+final_text = "best in Python is A girl"
+
+print(final_text.find('girl'))
+
+output: 20
+
+-----------
+
+#format()	Formats specified values in a string
+
+final_text = "best in Python is A girl scoring {score}"
+
+print(final_text.format(score=100))
+
+output: best in Python is A girl scoring 100
+
+#you do not need to convert the integer to a string here.
+#to make it a floating point to a number of decimal places
+
+final_text = "best in Python is A girl scoring {score:.4f}"
+
+print(final_text.format(score=100))
+output: best in Python is A girl scoring 100.0000
+
+#if you do it this way
+
+final_text = "best in Python is A girl scoring {score}"
+
+print(final_text.format(score=100.0000))
+
+output: best in Python is A girl scoring 100.0  
+
+#system will reduce the zeros to one, 
+#but it works fine for other signifcant places
+
+final_text = "best in Python is A girl scoring {score}"
+
+print(final_text.format(score=100.3423))
+
+output: best in Python is A girl scoring 100.3423
+
+#the following will all produce the same output
+
+    final_text = "best in Python is A girl scoring {score} and she is {quality}"
+    
+    print(final_text.format(score=103, quality='beautiful'))
+    
+    further_text = "best in python is a girl scoring {0} and she is {1}".format(103, 'beautiful')
+    
+    print(further_text)
+    
+    other_text = "best in Python is a girl scoring {} and she is {}"
+    
+    print(other_text.format(103, 'beautiful'))
+
+output: 
+
+best in Python is A girl scoring 103 and she is beautiful  #the first one used name vairable
+best in python is a girl scoring 103 and she is beautiful   #second use numbered indexes
+best in Python is a girl scoring 103 and she is beautiful    #third used blank spaces
+
+--------------for other formatting
