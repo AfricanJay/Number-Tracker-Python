@@ -1,5 +1,45 @@
 Read up Numbers.ipynb, variable assignment.ipynb
 
+x = 1    # int
+y = 2.8  # float
+z = 1j   # complex
+
+#convert from int to float:
+a = float(x)
+
+#convert from float to int:
+b = int(y)
+
+#convert from int to complex:
+c = complex(x)
+
+print(a)
+print(b)
+print(c)
+
+output:  1.0      #converts the integer to a float
+output:  2       #converts the float to an integer
+output:  (1 + 0j)     #converts the integer to a complex 
+
+
+#note d = int(z) or float(z) will not work because a complex number cannot be convert to integer or float
+
+d = complexy(y)
+print(d)
+
+output: (2.8+0j)  #can work because you can convert float to complex
+
+
+print(type(a))
+print(type(b))
+print(type(c))
+
+Ouput:
+<class 'float'>
+<class 'int'>
+<class 'complex'>
+----------------------------------------------
+
 #Eight major data types in Python:
 
 int (for integer)
@@ -13,7 +53,7 @@ bool (for Boolean True/False)'
 
 h
 
--------STRING-------------
+-------STRING--------------------
 #text characters, can also have numbers as strings if they are enclosed in quotations. works with either signle or double
 
 #if you are going to have a single quote in the string, encase the entire string in doubles and vice versa."
