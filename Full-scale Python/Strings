@@ -38,6 +38,21 @@ Ouput:
 <class 'float'>
 <class 'int'>
 <class 'complex'>
+
+
+--random numbers---
+
+import random
+
+print(random.randrange(32, 50))
+
+output: 32
+
+#run again
+
+output: 45
+
+#will pick any number between the range
 ----------------------------------------------
 
 #Eight major data types in Python:
