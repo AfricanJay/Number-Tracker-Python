@@ -392,4 +392,77 @@ best in Python is A girl scoring 103 and she is beautiful  #the first one used n
 best in python is a girl scoring 103 and she is beautiful   #second use numbered indexes
 best in Python is a girl scoring 103 and she is beautiful    #third used blank spaces
 
---------------for other formatting
+--------------for other formatting. a colon always comes before the format
+
+:, #to add a comma to separate thousand values
+
+final_text = "best in Python is A girl scoring {score:,}"
+
+print(final_text.format(score=14000000))
+
+OR:
+
+final_text = "best in Python is A girl scoring {:,}"
+
+print(final_text.format(14000000))
+
+#the above works since it is only one value
+
+OUTPUT: best in Python is A girl scoring 14,000,000
+
+:_ #to use an underscore as a thousand separator
+
+final_text = "best in Python is A girl scoring {:_}"
+
+print(final_text.format(14000000))
+
+:b #to get the binary format of a number
+
+Check this page: https://www.w3schools.com/python/ref_string_format.asp for the rest of the format
+
+
+-------------------------INDEX METHOD---------------------------
+
+#The index() method is almost the same as the find() method, 
+the only difference is that the find() method returns -1 if the value is not found
+
+final_text = "best in Python is A girl scoring".index('Python')
+
+print(final_text)
+
+Output: 8
+
+#you can als limit the search range of the index
+
+final_text = "best in Python is A girl scoring".index('Python', 2, 10)
+
+print(final_text)
+
+Output: This will throw back an error because 'python' exceeds substring 10
+
+Try:
+
+final_text = "best in Python is A girl scoring".index('Python', 2, 20)
+
+print(final_text)
+
+Output: this works because python is within the selected.
+
+-----------string checkers--------------
+
+isalnum()	Returns True if all characters in the string are alphanumeric
+isalpha()	Returns True if all characters in the string are in the alphabet
+isascii()	Returns True if all characters in the string are ascii characters
+isdecimal()	Returns True if all characters in the string are decimals
+isdigit()	Returns True if all characters in the string are digits
+isidentifier()	Returns True if the string is an identifier
+islower()	Returns True if all characters in the string are lower case
+isnumeric()	Returns True if all characters in the string are numeric
+isprintable()	Returns True if all characters in the string are printable
+isspace()	Returns True if all characters in the string are whitespaces
+istitle()	Returns True if the string follows the rules of a title
+isupper()	Returns True if all characters in the string are upper case
+
+----------------------------------------------------------------
+
+[...continue filling string methods here]
