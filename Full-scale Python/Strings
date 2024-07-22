@@ -421,7 +421,7 @@ print(final_text.format(14000000))
 Check this page: https://www.w3schools.com/python/ref_string_format.asp for the rest of the format
 
 
--------------------------INDEX METHOD---------------------------
+-----------------
 
 #The index() method is almost the same as the find() method, 
 the only difference is that the find() method returns -1 if the value is not found
@@ -466,3 +466,208 @@ isupper()	Returns True if all characters in the string are upper case
 ----------------------------------------------------------------
 
 [...continue filling string methods here]
+
+----------
+
+#join will join all the members of a string data type together, using a specified separator
+
+final_tuple = ("Aisha", "Farida", "Nono")
+
+x = "#".join(final_tuple)
+
+print(x)
+
+Output: Aisha#Farida#Nono
+
+OR:
+
+final_tuple = ("Aisha", "Farida", "Nono")
+
+mySeparate = " "  #whitespace
+
+x = myseparate.join(final_tuple)
+
+print(x)
+
+output:
+
+Aisha Farida Nono
+
+OR:
+
+final_dict = {"name": "John", "country": "Norway"}
+mySeparator = "00"
+
+x = mySeparator.join(final_dict)
+
+print(x)
+
+output:
+
+name00country   #does not join the values
+
+-----------------
+
+#ljust returns a left justiied version of the string, autmatically padded with white spaces depending on the specified
+#number, or padded with any string character specified.
+
+final_text = ("name")
+
+print(final_text.ljust(20), "jennifer")
+
+#remember, there are many ways to write this, like creating a separate variable in btw to do the ljust
+
+output: name                 jennifer      #it pads name with 1 white spaces to make 20
+
+
+final_text = ("name")
+
+print(final_text.ljust(20, 'x'), "jennifer")
+
+
+output: namexxxxxxxxxxxxxxxx jennifer
+
+-----------------------
+
+#lower returns the lowercase version of the string
+
+
+txt = "Hello my FRIENDS"
+
+print(txt.lower())
+
+output: hello my friends
+
+-----------------
+
+final_text = ("          miss            ")
+
+c = final_text.lstrip()
+
+print("her name is ", c, " jennifer")
+
+output: her name is  miss              jennifer   #only strips to the left
+
+
+OR:
+
+final_text = ("          miss            ")
+
+print("her name is ", final_text.lstrip(), " jennifer")
+
+#if the leading characters aren't white spaces:
+
+final_text = ("######44444aaaa......miss    ")
+
+print("her name is ", final_text.lstrip("#4a."), " jennifer")
+
+
+----------------
+
+#maketrans() returns a translation table used as a sort of find a replace and remove
+
+final_text = "Hello Jenny"
+
+x = "Jen"
+y = "Gim"
+
+translator = str.maketrans(x, y)
+print(final_text.translate(translator))
+
+OUTPUT: Hillo Gimmy
+
+final_text = "Hello Jenny"
+
+x = "Jen"
+y = "Gim"
+z="oy"
+translator = str.maketrans(x, y, z)
+print(final_text.translate(translator))
+
+Output: Hill Gimm  #the work of z is to remove characters from the string
+
+-----------------------
+
+#partition() takes in a string and returns a tuple divided into three
+
+final_text = "Hello Jenny how have you been since?"
+
+print(final_text.partition("have you"))
+
+Output: ('Hello Jenny how ', 'have you', ' been since?')
+
+#returns empty tuple spaces if the dividing characters are not found
+
+
+final_text = "Hello Jenny how have you been since?"
+
+print(final_text.partition("always"))
+
+Output: ('Hello Jenny how have you been since?', '', '') #always is not there, so it splits with empty results
+
+------------------------------
+
+#replace() takes a value and replaces it with another one. Default is to replace all instances of the old value. but you
+can specify how many times you want it, from the top
+
+final_text = "Jenny Jenny, how are you?"
+
+
+print(final_text.replace("Jenny", "Sam"))
+
+Output: Sam Sam, how are you?
+
+Or..
+
+final_text = "Jenny Jenny, how are you?"
+
+
+print(final_text.replace("Jenny", "Sam", 1))
+
+Output: Sam Jenny, how are you?
+
+-------------------
+rfind() is different from find becasue instead of starting from the front to pick the index, it starts from the back. Or
+simply put, the index of the last position where the substring was found
+
+final_text = "Jenny Jenny, how are you?"
+
+v = final_text.rfind("Jenny")
+
+
+print(v)
+
+Output: 6. Find would have been 0.
+
+#you can search within a range
+
+final_text = "Jenny Jenny, how are you?"
+
+v = final_text.find("n", 7, 12)
+
+
+print(v)
+
+output: 8
+
+------------------
+
+rjust() returns a right justified version of the string. That means it pads with spaces to the right
+
+final_text = "Jenny, you?"
+v = final_text.rjust(20)
+
+print(v, "man")
+
+output:         Jenny, you? man
+
+or
+
+#you can define a string or character to pad with
+
+final_text = "Jenny, you?"
+v = final_text.rjust(20, "x")
+
+print(v, "man")
+
+output:xxxxxxxxxJenny, you? man
