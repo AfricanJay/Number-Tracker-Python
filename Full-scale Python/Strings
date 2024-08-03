@@ -671,3 +671,162 @@ v = final_text.rjust(20, "x")
 print(v, "man")
 
 output:xxxxxxxxxJenny, you? man
+
+----------PROPER STRING FORMATTING-------------------------
+
+#using % placeholders. you can simply write %s to inject a string
+
+print("i really want to check the value of %s later" %'the score')   #notice no comma btw the string and % sign
+
+output: i really want to check the value of the score later
+
+#you can inject multiple values
+
+print("i really want to check the value of %s later, because I want to know %s is supposed to be sent from %s to %s" %('the score','how much','treasury', 'accounts'))
+
+output: i really want to check the value of the score later, because I want to know how much is supposed to be sent from treasury to accounts
+
+#you can pass variable names
+
+w,x,y,z = 'the score','how much','treasury', 'accounts'
+
+print("i really want to check the value of %s later, because I want to know %s is supposed to be sent from %s to %s" %(w,x,y,z))
+
+output: i really want to check the value of the score later, because I want to know how much is supposed to be sent from treasury to accounts
+
+
+#r% injects everything into a string, including the quotation marks and esc characters
+
+print('jay is really %s' %'pretty')
+print('jay is really %r' %'pretty')
+
+output:
+jay is really pretty
+jay is really 'pretty'
+
+print('jay is really %s' %'super \tpretty')
+print('jay is really %r' %'super \tpretty')
+
+output:
+jay is really super 	pretty
+jay is really 'super \tpretty'
+
+#you can covert any numbers into instant string using %s, without using the str() method or encasing in quotes. Also, %d rounds to integers with no decimals
+
+print('I have only %s chance of getting it' %100.0120)
+print('I have only %d chance of getting it' %100.0120)
+
+output:
+I have only 100.012 chance of getting it
+I have only 100 chance of getting it
+
+precision of floating points:
+
+print('Floating point numbers: %5.2f' %(13.144))
+output: Floating point numbers: 13.14 
+
+print('Floating point numbers: %1.0f' %(13.144))
+output: Floating point numbers: 13
+
+print('Floating point numbers: %1.5f' %(13.144))
+output: Floating point numbers: 13.14400
+
+print('Floating point numbers: %10.2f' %(13.144))  #pre-padding to mke up to 10 characters which is what the 10 means
+
+output: Floating point numbers:      13.14
+print('Floating point numbers: %25.2f' %(13.144))
+Floating point numbers:                     13.14
+
+
+#multiple insertions of random type
+
+print("i want to use this %s to count %7.3f of %r coming at %dpm" %('medium', 5.1234, 'people', 4.12))
+
+output: i want to use this medium to count   5.123 of 'people' coming at 4pm
+#notice the padding to make up to 7 characters for the 2nd one
+
+#remember the .format method and the three different ways it can be used? always better than the %s,f,r,d styles
+
+print('i must power {}'.format('through'))
+print('i must power {}, {}'.format('through', 'this'))
+print('i must embrace the {3}, {2}, {1}, {0}'.format('tedium', 'and', 'extreme', 'boredom'))
+print('i must embrace the {a}, {b}, {c}, {d}'.format(a='tedium', b=2, c='extreme', d='boredom'))  #notice how the number didn't require quotations
+
+output:
+i must power through
+i must power through, this
+i must embrace the boredom, extreme, and, tedium
+i must embrace the tedium, 2, extreme, boredom
+
+3. Inserted objects can be reused, avoiding duplication:
+print('A %s saved is a %s earned.' %('penny','penny'))
+# vs.
+print('A {p} saved is a {p} earned.'.format(p='penny'))
+A penny saved is a penny earned.
+A penny saved is a penny earned.
+
+
+#how to align and use padding in tuples with .format
+
+
+
+Within the curly braces you can assign field lengths, left/right alignments, rounding parameters and more
+
+print('{0:8} | {1:9}'.format('Fruit', 'Quantity'))
+print('{0:8} | {1:9}'.format('Apples', 3.))
+print('{0:8} | {1:9}'.format('Oranges', 10))
+
+output::
+Fruit    | Quantity 
+Apples   |       3.0
+Oranges  |        10
+
+#note: 0,1 preceding the colons are the indexes of the content of the tuple, not index spaces themselvies. Doing {2:8} will fling an error because there is no 3rd item.
+
+By default, .format() aligns text to the left, numbers to the right. You can pass an optional <,^, or > to set a left, center or right alignment:
+
+print('{0:<8} | {1:^8} | {2:>8}'.format('Left','Center','Right'))
+print('{0:<8} | {1:^8} | {2:>8}'.format(11,22,33))
+Left     |  Center  |    Right
+11       |    22    |       33
+You can precede the aligment operator with a padding character
+
+print('{0:=<8} | {1:-^8} | {2:.>8}'.format('Left','Center','Right'))
+print('{0:=<8} | {1:-^8} | {2:.>8}'.format(11,22,33))
+Left==== | -Center- | ...Right
+11====== | ---22--- | ......33
+
+
+#check this out
+
+print('This is my fourteen-character, five-decimal number:%14.5f' %13.5793848)
+print('This is my fourteen-character, five-decimal number:{0:14.5f}'.format(13.5793848))
+
+they produce same output:
+
+output: This is my fourteen-character, five-decimal number:      13.57938
+        This is my fourteen-character, five-decimal number:      13.57938
+
+#using f-string instead of format
+
+gender = "two spirit"
+
+print (f'she said her gender is {gender}')
+
+output: she said her gender is two spirit
+
+print(f'she said her gender is {gender!r}')
+
+output: she said her gender is "two spirit"  #use !r to pull the full string representation
+
+
+value = 12.456
+
+print("This is my fourteen-character, five-decimal number:{0:14.5f}".format(value))   #using format method
+print(f'This is my fourteen-character, five-decimal number:{value:14.5f}')    #using f-string
+
+
+output:
+
+This is my fourteen-character, five-decimal number:      12.45600
+This is my fourteen-character, five-decimal number:      12.45600
