@@ -1068,4 +1068,39 @@ y=2
 x = str(4)
 print (x+y)
 
-output: error  #cannot a string and integer
+output: error  #cannot add a string and integer
+
+
+-------------PYTHON BOOLEAN------------------------
+
+
+Most bool values wil return true
+
+bool("abc")
+bool(123)
+bool(["apple", "cherry", "banana"])
+
+some will return false
+
+bool(False)
+bool(None)
+bool(0)
+bool("")
+bool(())
+bool([])
+bool({})
+
+def myFunction() :
+  return True
+
+print(myFunction())
+
+output: True
+
+#using the isinstacne() fxn to check the datatype of a variable
+
+x = 200
+print(isinstance(x, int))
+
+output: True
+
